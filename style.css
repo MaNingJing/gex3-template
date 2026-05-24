@@ -1,0 +1,348 @@
+@font-face {
+  font-family: 'Luna';
+  src: url('assets/fonts/Luna.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url("assets/bg-totoro.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  padding: 2rem;
+  overflow-y: scroll;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: transparent;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  text-align: center;
+  color: #8ceb8f;
+  margin-bottom: 2rem;
+  font-family: 'Luna', 'Comic Sans MS', cursive, sans-serif;
+}
+
+.accordion {
+  border: none;
+  background: transparent;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.accordion-item {
+  border: none;
+  background: transparent;
+  margin: 0;
+  position: relative;
+}
+
+.accordion-item:nth-child(1) .accordion-button {
+  background-image: url('assets/acc-bg1.jpg');
+  background-size: 100% 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.accordion-item:nth-child(2) .accordion-button {
+  background-image: url('assets/acc-bg2.jpg');
+  background-size: 100% 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.accordion-item:nth-child(3) .accordion-button {
+  background-image: url('assets/acc-bg3.jpg');
+  background-size: 100% 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.accordion-item:nth-child(4) .accordion-button {
+  background-image: url('assets/acc-bg4.jpg');
+  background-size: 100% 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.accordion-item:nth-child(5) .accordion-button {
+  background-image: url('assets/acc-bg5.jpg');
+  background-size: 100% 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+
+.accordion-button {
+  position: relative;
+  color: white !important;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  font-weight: bold;
+  font-size: 1.2rem;
+  min-height: 80px;
+  border: none;
+  border-radius: 0 !important;
+  background-color: transparent;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.accordion-title {
+  font-family: 'Luna', 'Comic Sans MS', cursive, sans-serif;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+}
+
+.accordion-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion-button::after {
+  position: relative;
+  z-index: 2;
+  filter: brightness(0) invert(1);
+  margin-left: auto;
+}
+
+.accordion-button:not(.collapsed) {
+  color: rgb(113, 207, 110) !important;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: transparent;
+}
+
+.accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1);
+}
+
+.accordion-body {
+  background: rgba(245, 235, 208, 0.95);
+  border-radius: 0 0 8px 8px;
+  padding: 1.5rem;
+}
+
+.place-card {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  text-align: center;
+  padding: 0.75rem;
+  background: white;
+}
+
+.place-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.place-card.selected {
+  border-color: #28a745;
+  background-color: #e8f5e9;
+  box-shadow: 0 0 12px rgba(40, 167, 69, 0.4);
+}
+
+.place-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.place-card .place-name {
+  margin-top: 0.6rem;
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: #333;
+}
+
+.place-card .place-description {
+  font-size: 0.7rem;
+  color: #666;
+  margin-top: 0.3rem;
+  line-height: 1.3;
+}
+
+.error-text {
+  color: #dc3545;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.general-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  text-align: center;
+  border: 1px solid #f5c6cb;
+}
+
+.loading-text {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.itinerary-summary {
+  background: linear-gradient(135deg, #fff8e7, #fff0d4);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border: 2px solid #4CAF50;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.itinerary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.itinerary-header h3 {
+  font-family: 'Luna', 'Comic Sans MS', cursive;
+  color: #4CAF50;
+  margin: 0;
+}
+
+.btn-close-summary {
+  background: #f44336;
+  color: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-close-summary:hover {
+  background: #d32f2f;
+  transform: scale(1.05);
+}
+
+.itinerary-section {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e0d5b5;
+}
+
+.itinerary-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.itinerary-section h4 {
+  color: #4CAF50;
+  margin-bottom: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.itinerary-section p {
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.itinerary-section ul {
+  margin-left: 1.2rem;
+  margin-bottom: 0;
+}
+
+.itinerary-section li {
+  color: #333;
+  margin-bottom: 0.2rem;
+}
+
+.button-wrapper {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.btn-success {
+  font-family: 'Luna', 'Comic Sans MS', cursive;
+  font-size: 1.1rem;
+  display: inline-block;
+  width: auto;
+  padding: 10px 24px;
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  
+  .container {
+    padding: 1.5rem;
+  }
+  
+  .place-card img {
+    height: 100px;
+  }
+  
+  .place-card .place-name {
+    font-size: 0.75rem;
+  }
+  
+  .place-card .place-description {
+    font-size: 0.65rem;
+  }
+  
+  .accordion-button {
+    font-size: 1rem;
+    min-height: 70px;
+  }
+  
+  .accordion-title {
+    font-size: 0.85rem;
+  }
+  
+  .btn-success {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+}
